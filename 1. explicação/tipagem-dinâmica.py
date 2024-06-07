@@ -1,5 +1,4 @@
 # Atribuindo valores
-
 nome = "Sophia"
 idade = 19
 peso = 52.0
