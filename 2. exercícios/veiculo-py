@@ -1,0 +1,61 @@
+from os import system
+from dataclasses import dataclass
+from time import sleep
+
+QUANTIDADE_CLIENTES = 2
+
+def limpar():
+    system('clear')
+
+@dataclass
+class Veiculo():
+    placa: str
+    cor: str
+    n_passageiros: int
+    cap_tanque: float
+    velocidade_max: int
+    consumo_medio: float
+
+@dataclass
+class Cliente():
+    nome: str
+    idade: int
+    cpf: int
+    telefone: int
+    endereco: str
+
+veiculos = []
+clientes = []
+
+for i in range(1,QUANTIDADE_CLIENTES):
+    limpar()
+    print(f"=====  VEICULO {i}  =====\n")
+    placa_v = input("Placa do Veiculo: ")
+    cor_v = input("Cor: ")
+    n_passageiros_v = int(input("Número de Passageiros: "))
+    cap_tanque_v = float(input('Capacidade do Tanque: '))
+    velocidade_max_v = int(input("Velocidade Máxima: "))
+    consumo_medio_v = float(input("Consumo Médio: "))
+    veiculo = Veiculo(placa= placa_v, cor= cor_v, n_passageiros= n_passageiros_v, cap_tanque= cap_tanque_v, velocidade_max= velocidade_max_v, consumo_medio= consumo_medio_v)
+    veiculos.append(veiculo)
+    for j in range(1, QUANTIDADE_CLIENTES):
+        print("\n=====  Cliente {j}  =====\n")
+        nome_cliente = input("Digite seu Nome: ")
+        idade_cliente = int(input("Digite sua Idade: "))
+        cpf_cliente = int(input("Digite seu CPF: "))
+        telefone_cliente = int(input("Digite seu telefone: "))
+        endereco_cliente = input("Digite seu endereço: ")
+        cliente = Cliente(nome= nome_cliente, idade= idade_cliente, cpf= cpf_cliente, telefone= telefone_cliente, endereco= endereco_cliente)
+        clientes.append(cliente)
+
+for i in range(1, veiculos):
+    print(f'Veiculo {i}')
+    for dados_veiculo in veiculos:
+        print(f"Placa do Veiculo: {dados_veiculo.placa}")
+        print(f"Cor: {dados_veiculo.cor}")
+        print(f"Número de Passageiros: {dados_veiculo.n_passageiros}")
+        print(f"Capacidade do Tanque: {dados_veiculo.cap_tanque}")
+        print(f"Velocidade Máxima: {dados_veiculo.velocidade_max}")
+        print(f"Consumo Médio: {dados_veiculo.consumo_medio}")
+        for dados_cliente in clientes:
+            print(f"Nome do Cliente: ")
