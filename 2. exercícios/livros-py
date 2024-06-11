@@ -1,0 +1,32 @@
+from os import system
+from dataclasses import dataclass
+
+NUMEROS_LIVROS = 2
+
+def limpar():
+    system('clear')
+
+@dataclass
+class Livro():
+    livro: str
+    autor: str
+    npaginas: int
+    preco: float
+
+livros = []
+
+for i in range(NUMEROS_LIVROS):
+    limpar()
+    livro_nome = input("Digite o Nome do Livro: ")
+    autor_nome = input("Digite o Autor do Livro: ")
+    paginas_quant = int(input("Digite o Número de Páginas do Livro: "))
+    preco_livro = float(input("Digite o Preço: R$"))
+    livro = Livro(livro = livro_nome, autor = autor_nome, npaginas = paginas_quant, preco = preco_livro)
+    livros.append(livro)
+
+for dados_livros in livros:
+    print(f"Livro: {dados_livros.livro}")
+    print(f"Autor: {dados_livros.autor}")
+    print(f"Número de Páginas: {dados_livros.npaginas}")
+    print("Preco do Livro: R${:.2f}".format(dados_livros.preco))
+
