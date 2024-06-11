@@ -10,23 +10,23 @@ def limpar():
 class Livro():
     livro: str
     autor: str
-    npaginas: int
+    paginas: int
     preco: float
 
 livros = []
 
 for i in range(NUMEROS_LIVROS):
     limpar()
-    livro_nome = input("Digite o Nome do Livro: ")
-    autor_nome = input("Digite o Autor do Livro: ")
-    paginas_quant = int(input("Digite o Número de Páginas do Livro: "))
-    preco_livro = float(input("Digite o Preço: R$"))
-    livro = Livro(livro = livro_nome, autor = autor_nome, npaginas = paginas_quant, preco = preco_livro)
+    livro_nome = input("Digite o nome do livro: ")
+    autor_nome = input("Digite o autor do livro: ")
+    paginas_quantidade = int(input("Digite o número de páginas do livro: "))
+    preco_livro = float(input("Digite o preço do livro: R$"))
+    livro = Livro(livro = livro_nome, autor = autor_nome, paginas = paginas_quantidade, preco = preco_livro)
     livros.append(livro)
 
 for dados_livros in livros:
     print(f"Livro: {dados_livros.livro}")
     print(f"Autor: {dados_livros.autor}")
-    print(f"Número de Páginas: {dados_livros.npaginas}")
+    print(f"Número de Páginas: {dados_livros.paginas}")
     print("Preco do Livro: R${:.2f}".format(dados_livros.preco))
 
