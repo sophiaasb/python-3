@@ -13,4 +13,4 @@ media = sum(notas) / quantidade_notas
 for i, nota in enumerate(notas):
     print(f"{i+1}ª nota: {nota}")
 
-print(f"\média: {media}")
+print(f"\nMédia: {media}")
