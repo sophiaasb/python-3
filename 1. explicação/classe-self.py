@@ -12,9 +12,9 @@ class Aluno:
 alunos = []
 
 for i in range(QUANTIDADE_ALUNOS):
-    nome = input("Digite seu nome: ")
-    idade = int(input("Digite sua idade: "))
-    aluno = Aluno(nome = nome, idade = idade)
+    nome_aluno = input("Digite seu nome: ")
+    idade_aluno = int(input("Digite sua idade: "))
+    aluno = Aluno(nome = nome_aluno, idade = idade_aluno)
     alunos.append(aluno)
 
 for dados_aluno in alunos:
